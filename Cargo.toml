@@ -1,0 +1,22 @@
+[package]
+name = "streamdeck-mpv"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+openaction = "2.8"
+tera = "2.4"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "io-util", "sync", "time"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+log = "0.4"
+simplelog = "0.12"
+
+[dev-dependencies]
+tempfile = "3"
+tokio-tungstenite = "0.28"
+futures-util = "0.3"
+
+[profile.release]
+strip = true

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="help.css">
+  <script src="sdpi-components.js"></script>
+</head>
+<body>
+  <sdpi-item label="Template">
+    <sdpi-textarea setting="template" rows="3"></sdpi-textarea>
+  </sdpi-item>
+  <sdpi-item label="Socket">
+    <sdpi-textfield setting="socketPath" placeholder="/tmp/mpvsocket"></sdpi-textfield>
+  </sdpi-item>
+  <div class="help">
+    <p>
+      A <a href="https://keats.github.io/tera/docs/">Tera</a> template. Write mpv property
+      names with <code>_</code> instead of <code>-</code>: <code>time_pos</code>, not
+      <code>time-pos</code> (Tera reads <code>-</code> as minus). Use dots for
+      sub-properties: <code>metadata.title</code>. A newline starts a second title line.
+    </p>
+    <p>
+      <code>| time</code> formats seconds as <code>M:SS</code> or <code>H:MM:SS</code>, and
+      <code>--</code> when unavailable. Other properties that may be missing (no file loaded)
+      need <code>| default(value="…")</code>, or the key shows <code>--</code>.
+    </p>
+    <p>Examples:</p>
+    <ul>
+      <li><code>{{ time_pos | time }}</code></li>
+      <li><code>{{ duration | time }}</code></li>
+      <li><code>{{ time_remaining | time }}</code></li>
+      <li><code>{{ percent_pos | default(value=0) | int }}%</code></li>
+      <li><code>{{ media_title | default(value="") }}</code></li>
+      <li><code>{% if pause | default(value=false) %}paused{% else %}playing{% endif %}</code></li>
+      <li><code>{{ metadata.title | default(value="") }}</code></li>
+    </ul>
+    <p>Empty shows <code>{{ time_pos | time }}</code>.</p>
+  </div>
+</body>
+</html>

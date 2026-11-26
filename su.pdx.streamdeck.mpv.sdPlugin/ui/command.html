@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="help.css">
+  <script src="sdpi-components.js"></script>
+</head>
+<body>
+  <sdpi-item label="Command">
+    <sdpi-textfield setting="command" placeholder="cycle pause"></sdpi-textfield>
+  </sdpi-item>
+  <sdpi-item label="Socket">
+    <sdpi-textfield setting="socketPath" placeholder="/tmp/mpvsocket"></sdpi-textfield>
+  </sdpi-item>
+  <div class="help">
+    <p>
+      input.conf text such as <code>cycle pause</code> or <code>seek 10</code>, one command per
+      line; mpv reports no errors for these.
+    </p>
+    <p>
+      Or a JSON array such as <code>["seek", 10]</code>; the key shows an alert if mpv rejects it.
+    </p>
+    <p>
+      mpv must run with <code>--input-ipc-server=&lt;socket&gt;</code>. Empty socket:
+      <code>/tmp/mpvsocket</code> (macOS), <code>\\.\pipe\mpvsocket</code> (Windows).
+    </p>
+  </div>
+</body>
+</html>

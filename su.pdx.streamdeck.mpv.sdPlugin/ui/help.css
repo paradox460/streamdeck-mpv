@@ -1,0 +1,39 @@
+/* Help text under the sdpi-components fields; colors and metrics follow
+   sdpi-components' own theme (dark window, 9pt, 95px label column). */
+.help {
+  margin: 4px 0 10px 95px;
+  max-width: 241px;
+  color: #b4b4b4;
+  font-family: system-ui, "Segoe UI", Arial, sans-serif;
+  font-size: 9pt;
+  line-height: 1.45;
+}
+
+.help p {
+  margin: 0 0 8px;
+}
+
+.help code {
+  color: #e6e6e6;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 8.5pt;
+  font-variant-ligatures: none;
+  overflow-wrap: anywhere;
+}
+
+.help a {
+  color: #6fa8ff;
+}
+
+.help ul {
+  margin: 0 0 8px;
+  padding: 0;
+  list-style: none;
+}
+
+.help li {
+  margin: 0 0 4px;
+  padding: 3px 6px;
+  background: #3d3d3d;
+  border-radius: 3px;
+}
